@@ -56,10 +56,10 @@ RM = D:\Software\Scoop\LocalApps\apps\cmake\current\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\Learn_file\Required_Courses\3.3\Project1_sm4_optimization
+CMAKE_SOURCE_DIR = D:\Learn_file\Required_Courses\project\Project1_sm4_optimization
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\Learn_file\Required_Courses\3.3\Project1_sm4_optimization\build
+CMAKE_BINARY_DIR = D:\Learn_file\Required_Courses\project\Project1_sm4_optimization\build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -131,9 +131,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Learn_file\Required_Courses\3.3\Project1_sm4_optimization\build\CMakeFiles D:\Learn_file\Required_Courses\3.3\Project1_sm4_optimization\build\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Learn_file\Required_Courses\project\Project1_sm4_optimization\build\CMakeFiles D:\Learn_file\Required_Courses\project\Project1_sm4_optimization\build\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Learn_file\Required_Courses\3.3\Project1_sm4_optimization\build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Learn_file\Required_Courses\project\Project1_sm4_optimization\build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -185,19 +185,6 @@ test_sm4: cmake_check_build_system
 test_sm4/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_sm4.dir\build.make CMakeFiles/test_sm4.dir/build
 .PHONY : test_sm4/fast
-
-#=============================================================================
-# Target rules for targets named test_gcm
-
-# Build rule for target.
-test_gcm: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 test_gcm
-.PHONY : test_gcm
-
-# fast build rule for target.
-test_gcm/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_gcm.dir\build.make CMakeFiles/test_gcm.dir/build
-.PHONY : test_gcm/fast
 
 #=============================================================================
 # Target rules for targets named benchmark
@@ -332,30 +319,6 @@ src/sm4_win.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\sm4_optimized.dir\build.make CMakeFiles/sm4_optimized.dir/src/sm4_win.c.s
 .PHONY : src/sm4_win.c.s
 
-tests/test_gcm.obj: tests/test_gcm.c.obj
-.PHONY : tests/test_gcm.obj
-
-# target to build an object file
-tests/test_gcm.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_gcm.dir\build.make CMakeFiles/test_gcm.dir/tests/test_gcm.c.obj
-.PHONY : tests/test_gcm.c.obj
-
-tests/test_gcm.i: tests/test_gcm.c.i
-.PHONY : tests/test_gcm.i
-
-# target to preprocess a source file
-tests/test_gcm.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_gcm.dir\build.make CMakeFiles/test_gcm.dir/tests/test_gcm.c.i
-.PHONY : tests/test_gcm.c.i
-
-tests/test_gcm.s: tests/test_gcm.c.s
-.PHONY : tests/test_gcm.s
-
-# target to generate assembly for a file
-tests/test_gcm.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\test_gcm.dir\build.make CMakeFiles/test_gcm.dir/tests/test_gcm.c.s
-.PHONY : tests/test_gcm.c.s
-
 tests/test_sm4.obj: tests/test_sm4.c.obj
 .PHONY : tests/test_sm4.obj
 
@@ -394,7 +357,6 @@ help:
 	@echo ... rebuild_cache
 	@echo ... benchmark
 	@echo ... sm4_optimized
-	@echo ... test_gcm
 	@echo ... test_sm4
 	@echo ... benchmarks/perf_test.obj
 	@echo ... benchmarks/perf_test.i
@@ -411,9 +373,6 @@ help:
 	@echo ... src/sm4_win.obj
 	@echo ... src/sm4_win.i
 	@echo ... src/sm4_win.s
-	@echo ... tests/test_gcm.obj
-	@echo ... tests/test_gcm.i
-	@echo ... tests/test_gcm.s
 	@echo ... tests/test_sm4.obj
 	@echo ... tests/test_sm4.i
 	@echo ... tests/test_sm4.s

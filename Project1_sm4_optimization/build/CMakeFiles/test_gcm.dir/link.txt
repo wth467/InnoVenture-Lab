@@ -1,3 +1,0 @@
-D:\Software\Scoop\LocalApps\apps\cmake\current\bin\cmake.exe -E rm -f CMakeFiles\test_gcm.dir/objects.a
-D:\Software\Scoop\LocalApps\apps\mingw\current\bin\ar.exe qc CMakeFiles\test_gcm.dir/objects.a @CMakeFiles\test_gcm.dir\objects1.rsp
-D:\Software\Scoop\LocalApps\apps\mingw\current\bin\gcc.exe -Wl,--whole-archive CMakeFiles\test_gcm.dir/objects.a -Wl,--no-whole-archive -o test_gcm.exe -Wl,--out-implib,libtest_gcm.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\test_gcm.dir\linkLibs.rsp
