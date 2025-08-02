@@ -33,8 +33,7 @@ __m128i sm4_sbox_aesni_win(__m128i x) {
 
 void sm4_aesni_encrypt_blocks_win(const uint8_t *in, uint8_t *out, size_t blocks, 
                                  const uint32_t rk[32]) {
-    // 实现与Linux版本类似的AES-NI优化
-    // ...
+    
 }
 
 #endif

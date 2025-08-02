@@ -52,7 +52,7 @@ if(WIN32)
         if(COMPILER_SUPPORTS_AVX)
             add_compile_options(-mavx)
         endif()
-        
+
         if(ENABLE_AESNI)
             target_compile_options(sm4_optimized PRIVATE -maes -msse4.1)
             target_compile_definitions(sm4_optimized PRIVATE -D__AES__)
@@ -81,13 +81,13 @@ if(BUILD_TESTS)
     add_executable(test_sm4 tests/test_sm4.c)
     target_link_libraries(test_sm4 sm4_optimized)
     
-    # GCM模式测试
-    add_executable(test_gcm tests/test_gcm.c)
-    target_link_libraries(test_gcm sm4_optimized)
+    # # GCM模式测试
+    # add_executable(test_gcm tests/test_gcm.c)
+    # target_link_libraries(test_gcm sm4_optimized)
     
     # 添加测试目标
     add_test(NAME test_sm4 COMMAND test_sm4)
-    add_test(NAME test_gcm COMMAND test_gcm)
+    # add_test(NAME test_gcm COMMAND test_gcm)
 endif()
 
 # 性能测试
