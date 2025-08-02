@@ -1,0 +1,2 @@
+D:\Software\Scoop\LocalApps\apps\mingw\current\bin\ar.exe qc libsm4_optimized.a CMakeFiles/sm4_optimized.dir/src/sm4_basic.c.obj CMakeFiles/sm4_optimized.dir/src/sm4_ttable.c.obj CMakeFiles/sm4_optimized.dir/src/sm4_gcm.c.obj CMakeFiles/sm4_optimized.dir/src/sm4_win.c.obj
+D:\Software\Scoop\LocalApps\apps\mingw\current\bin\ranlib.exe libsm4_optimized.a
