@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "D:/Learn_file/Required_Courses/3.3/Project1_sm4_optimization/tests/test_sm4.c" "CMakeFiles/test_sm4.dir/tests/test_sm4.c.obj" "gcc" "CMakeFiles/test_sm4.dir/tests/test_sm4.c.obj.d"
+  "D:/Learn_file/Required_Courses/project/Project1_sm4_optimization/tests/test_sm4.c" "CMakeFiles/test_sm4.dir/tests/test_sm4.c.obj" "gcc" "CMakeFiles/test_sm4.dir/tests/test_sm4.c.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

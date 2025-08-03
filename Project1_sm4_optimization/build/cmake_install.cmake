@@ -1,4 +1,4 @@
-# Install script for directory: D:/Learn_file/Required_Courses/3.3/Project1_sm4_optimization
+# Install script for directory: D:/Learn_file/Required_Courses/project/Project1_sm4_optimization
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "D:/Learn_file/Required_Courses/3.3/Project1_sm4_optimization/build/libsm4_optimized.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "D:/Learn_file/Required_Courses/project/Project1_sm4_optimization/build/libsm4_optimized.a")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "D:/Learn_file/Required_Courses/3.3/Project1_sm4_optimization/include/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "D:/Learn_file/Required_Courses/project/Project1_sm4_optimization/include/")
 endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
 if(CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "D:/Learn_file/Required_Courses/3.3/Project1_sm4_optimization/build/install_local_manifest.txt"
+  file(WRITE "D:/Learn_file/Required_Courses/project/Project1_sm4_optimization/build/install_local_manifest.txt"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
 if(CMAKE_INSTALL_COMPONENT)
@@ -64,6 +64,6 @@ else()
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  file(WRITE "D:/Learn_file/Required_Courses/3.3/Project1_sm4_optimization/build/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "D:/Learn_file/Required_Courses/project/Project1_sm4_optimization/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

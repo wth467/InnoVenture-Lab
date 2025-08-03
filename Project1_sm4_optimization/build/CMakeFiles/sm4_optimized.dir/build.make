@@ -52,10 +52,10 @@ RM = D:\Software\Scoop\LocalApps\apps\cmake\current\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\Learn_file\Required_Courses\3.3\Project1_sm4_optimization
+CMAKE_SOURCE_DIR = D:\Learn_file\Required_Courses\project\Project1_sm4_optimization
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\Learn_file\Required_Courses\3.3\Project1_sm4_optimization\build
+CMAKE_BINARY_DIR = D:\Learn_file\Required_Courses\project\Project1_sm4_optimization\build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/sm4_optimized.dir/depend.make
@@ -73,63 +73,63 @@ CMakeFiles/sm4_optimized.dir/codegen:
 
 CMakeFiles/sm4_optimized.dir/src/sm4_basic.c.obj: CMakeFiles/sm4_optimized.dir/flags.make
 CMakeFiles/sm4_optimized.dir/src/sm4_basic.c.obj: CMakeFiles/sm4_optimized.dir/includes_C.rsp
-CMakeFiles/sm4_optimized.dir/src/sm4_basic.c.obj: D:/Learn_file/Required_Courses/3.3/Project1_sm4_optimization/src/sm4_basic.c
+CMakeFiles/sm4_optimized.dir/src/sm4_basic.c.obj: D:/Learn_file/Required_Courses/project/Project1_sm4_optimization/src/sm4_basic.c
 CMakeFiles/sm4_optimized.dir/src/sm4_basic.c.obj: CMakeFiles/sm4_optimized.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Learn_file\Required_Courses\3.3\Project1_sm4_optimization\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/sm4_optimized.dir/src/sm4_basic.c.obj"
-	D:\Software\Scoop\LocalApps\apps\mingw\current\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/sm4_optimized.dir/src/sm4_basic.c.obj -MF CMakeFiles\sm4_optimized.dir\src\sm4_basic.c.obj.d -o CMakeFiles\sm4_optimized.dir\src\sm4_basic.c.obj -c D:\Learn_file\Required_Courses\3.3\Project1_sm4_optimization\src\sm4_basic.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Learn_file\Required_Courses\project\Project1_sm4_optimization\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/sm4_optimized.dir/src/sm4_basic.c.obj"
+	D:\Software\Scoop\LocalApps\apps\mingw\current\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/sm4_optimized.dir/src/sm4_basic.c.obj -MF CMakeFiles\sm4_optimized.dir\src\sm4_basic.c.obj.d -o CMakeFiles\sm4_optimized.dir\src\sm4_basic.c.obj -c D:\Learn_file\Required_Courses\project\Project1_sm4_optimization\src\sm4_basic.c
 
 CMakeFiles/sm4_optimized.dir/src/sm4_basic.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/sm4_optimized.dir/src/sm4_basic.c.i"
-	D:\Software\Scoop\LocalApps\apps\mingw\current\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Learn_file\Required_Courses\3.3\Project1_sm4_optimization\src\sm4_basic.c > CMakeFiles\sm4_optimized.dir\src\sm4_basic.c.i
+	D:\Software\Scoop\LocalApps\apps\mingw\current\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Learn_file\Required_Courses\project\Project1_sm4_optimization\src\sm4_basic.c > CMakeFiles\sm4_optimized.dir\src\sm4_basic.c.i
 
 CMakeFiles/sm4_optimized.dir/src/sm4_basic.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/sm4_optimized.dir/src/sm4_basic.c.s"
-	D:\Software\Scoop\LocalApps\apps\mingw\current\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\Learn_file\Required_Courses\3.3\Project1_sm4_optimization\src\sm4_basic.c -o CMakeFiles\sm4_optimized.dir\src\sm4_basic.c.s
+	D:\Software\Scoop\LocalApps\apps\mingw\current\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\Learn_file\Required_Courses\project\Project1_sm4_optimization\src\sm4_basic.c -o CMakeFiles\sm4_optimized.dir\src\sm4_basic.c.s
 
 CMakeFiles/sm4_optimized.dir/src/sm4_ttable.c.obj: CMakeFiles/sm4_optimized.dir/flags.make
 CMakeFiles/sm4_optimized.dir/src/sm4_ttable.c.obj: CMakeFiles/sm4_optimized.dir/includes_C.rsp
-CMakeFiles/sm4_optimized.dir/src/sm4_ttable.c.obj: D:/Learn_file/Required_Courses/3.3/Project1_sm4_optimization/src/sm4_ttable.c
+CMakeFiles/sm4_optimized.dir/src/sm4_ttable.c.obj: D:/Learn_file/Required_Courses/project/Project1_sm4_optimization/src/sm4_ttable.c
 CMakeFiles/sm4_optimized.dir/src/sm4_ttable.c.obj: CMakeFiles/sm4_optimized.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Learn_file\Required_Courses\3.3\Project1_sm4_optimization\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/sm4_optimized.dir/src/sm4_ttable.c.obj"
-	D:\Software\Scoop\LocalApps\apps\mingw\current\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/sm4_optimized.dir/src/sm4_ttable.c.obj -MF CMakeFiles\sm4_optimized.dir\src\sm4_ttable.c.obj.d -o CMakeFiles\sm4_optimized.dir\src\sm4_ttable.c.obj -c D:\Learn_file\Required_Courses\3.3\Project1_sm4_optimization\src\sm4_ttable.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Learn_file\Required_Courses\project\Project1_sm4_optimization\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/sm4_optimized.dir/src/sm4_ttable.c.obj"
+	D:\Software\Scoop\LocalApps\apps\mingw\current\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/sm4_optimized.dir/src/sm4_ttable.c.obj -MF CMakeFiles\sm4_optimized.dir\src\sm4_ttable.c.obj.d -o CMakeFiles\sm4_optimized.dir\src\sm4_ttable.c.obj -c D:\Learn_file\Required_Courses\project\Project1_sm4_optimization\src\sm4_ttable.c
 
 CMakeFiles/sm4_optimized.dir/src/sm4_ttable.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/sm4_optimized.dir/src/sm4_ttable.c.i"
-	D:\Software\Scoop\LocalApps\apps\mingw\current\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Learn_file\Required_Courses\3.3\Project1_sm4_optimization\src\sm4_ttable.c > CMakeFiles\sm4_optimized.dir\src\sm4_ttable.c.i
+	D:\Software\Scoop\LocalApps\apps\mingw\current\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Learn_file\Required_Courses\project\Project1_sm4_optimization\src\sm4_ttable.c > CMakeFiles\sm4_optimized.dir\src\sm4_ttable.c.i
 
 CMakeFiles/sm4_optimized.dir/src/sm4_ttable.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/sm4_optimized.dir/src/sm4_ttable.c.s"
-	D:\Software\Scoop\LocalApps\apps\mingw\current\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\Learn_file\Required_Courses\3.3\Project1_sm4_optimization\src\sm4_ttable.c -o CMakeFiles\sm4_optimized.dir\src\sm4_ttable.c.s
+	D:\Software\Scoop\LocalApps\apps\mingw\current\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\Learn_file\Required_Courses\project\Project1_sm4_optimization\src\sm4_ttable.c -o CMakeFiles\sm4_optimized.dir\src\sm4_ttable.c.s
 
 CMakeFiles/sm4_optimized.dir/src/sm4_gcm.c.obj: CMakeFiles/sm4_optimized.dir/flags.make
 CMakeFiles/sm4_optimized.dir/src/sm4_gcm.c.obj: CMakeFiles/sm4_optimized.dir/includes_C.rsp
-CMakeFiles/sm4_optimized.dir/src/sm4_gcm.c.obj: D:/Learn_file/Required_Courses/3.3/Project1_sm4_optimization/src/sm4_gcm.c
+CMakeFiles/sm4_optimized.dir/src/sm4_gcm.c.obj: D:/Learn_file/Required_Courses/project/Project1_sm4_optimization/src/sm4_gcm.c
 CMakeFiles/sm4_optimized.dir/src/sm4_gcm.c.obj: CMakeFiles/sm4_optimized.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Learn_file\Required_Courses\3.3\Project1_sm4_optimization\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/sm4_optimized.dir/src/sm4_gcm.c.obj"
-	D:\Software\Scoop\LocalApps\apps\mingw\current\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/sm4_optimized.dir/src/sm4_gcm.c.obj -MF CMakeFiles\sm4_optimized.dir\src\sm4_gcm.c.obj.d -o CMakeFiles\sm4_optimized.dir\src\sm4_gcm.c.obj -c D:\Learn_file\Required_Courses\3.3\Project1_sm4_optimization\src\sm4_gcm.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Learn_file\Required_Courses\project\Project1_sm4_optimization\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/sm4_optimized.dir/src/sm4_gcm.c.obj"
+	D:\Software\Scoop\LocalApps\apps\mingw\current\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/sm4_optimized.dir/src/sm4_gcm.c.obj -MF CMakeFiles\sm4_optimized.dir\src\sm4_gcm.c.obj.d -o CMakeFiles\sm4_optimized.dir\src\sm4_gcm.c.obj -c D:\Learn_file\Required_Courses\project\Project1_sm4_optimization\src\sm4_gcm.c
 
 CMakeFiles/sm4_optimized.dir/src/sm4_gcm.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/sm4_optimized.dir/src/sm4_gcm.c.i"
-	D:\Software\Scoop\LocalApps\apps\mingw\current\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Learn_file\Required_Courses\3.3\Project1_sm4_optimization\src\sm4_gcm.c > CMakeFiles\sm4_optimized.dir\src\sm4_gcm.c.i
+	D:\Software\Scoop\LocalApps\apps\mingw\current\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Learn_file\Required_Courses\project\Project1_sm4_optimization\src\sm4_gcm.c > CMakeFiles\sm4_optimized.dir\src\sm4_gcm.c.i
 
 CMakeFiles/sm4_optimized.dir/src/sm4_gcm.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/sm4_optimized.dir/src/sm4_gcm.c.s"
-	D:\Software\Scoop\LocalApps\apps\mingw\current\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\Learn_file\Required_Courses\3.3\Project1_sm4_optimization\src\sm4_gcm.c -o CMakeFiles\sm4_optimized.dir\src\sm4_gcm.c.s
+	D:\Software\Scoop\LocalApps\apps\mingw\current\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\Learn_file\Required_Courses\project\Project1_sm4_optimization\src\sm4_gcm.c -o CMakeFiles\sm4_optimized.dir\src\sm4_gcm.c.s
 
 CMakeFiles/sm4_optimized.dir/src/sm4_win.c.obj: CMakeFiles/sm4_optimized.dir/flags.make
 CMakeFiles/sm4_optimized.dir/src/sm4_win.c.obj: CMakeFiles/sm4_optimized.dir/includes_C.rsp
-CMakeFiles/sm4_optimized.dir/src/sm4_win.c.obj: D:/Learn_file/Required_Courses/3.3/Project1_sm4_optimization/src/sm4_win.c
+CMakeFiles/sm4_optimized.dir/src/sm4_win.c.obj: D:/Learn_file/Required_Courses/project/Project1_sm4_optimization/src/sm4_win.c
 CMakeFiles/sm4_optimized.dir/src/sm4_win.c.obj: CMakeFiles/sm4_optimized.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Learn_file\Required_Courses\3.3\Project1_sm4_optimization\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/sm4_optimized.dir/src/sm4_win.c.obj"
-	D:\Software\Scoop\LocalApps\apps\mingw\current\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/sm4_optimized.dir/src/sm4_win.c.obj -MF CMakeFiles\sm4_optimized.dir\src\sm4_win.c.obj.d -o CMakeFiles\sm4_optimized.dir\src\sm4_win.c.obj -c D:\Learn_file\Required_Courses\3.3\Project1_sm4_optimization\src\sm4_win.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Learn_file\Required_Courses\project\Project1_sm4_optimization\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/sm4_optimized.dir/src/sm4_win.c.obj"
+	D:\Software\Scoop\LocalApps\apps\mingw\current\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/sm4_optimized.dir/src/sm4_win.c.obj -MF CMakeFiles\sm4_optimized.dir\src\sm4_win.c.obj.d -o CMakeFiles\sm4_optimized.dir\src\sm4_win.c.obj -c D:\Learn_file\Required_Courses\project\Project1_sm4_optimization\src\sm4_win.c
 
 CMakeFiles/sm4_optimized.dir/src/sm4_win.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/sm4_optimized.dir/src/sm4_win.c.i"
-	D:\Software\Scoop\LocalApps\apps\mingw\current\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Learn_file\Required_Courses\3.3\Project1_sm4_optimization\src\sm4_win.c > CMakeFiles\sm4_optimized.dir\src\sm4_win.c.i
+	D:\Software\Scoop\LocalApps\apps\mingw\current\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\Learn_file\Required_Courses\project\Project1_sm4_optimization\src\sm4_win.c > CMakeFiles\sm4_optimized.dir\src\sm4_win.c.i
 
 CMakeFiles/sm4_optimized.dir/src/sm4_win.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/sm4_optimized.dir/src/sm4_win.c.s"
-	D:\Software\Scoop\LocalApps\apps\mingw\current\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\Learn_file\Required_Courses\3.3\Project1_sm4_optimization\src\sm4_win.c -o CMakeFiles\sm4_optimized.dir\src\sm4_win.c.s
+	D:\Software\Scoop\LocalApps\apps\mingw\current\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\Learn_file\Required_Courses\project\Project1_sm4_optimization\src\sm4_win.c -o CMakeFiles\sm4_optimized.dir\src\sm4_win.c.s
 
 # Object files for target sm4_optimized
 sm4_optimized_OBJECTS = \
@@ -147,7 +147,7 @@ libsm4_optimized.a: CMakeFiles/sm4_optimized.dir/src/sm4_gcm.c.obj
 libsm4_optimized.a: CMakeFiles/sm4_optimized.dir/src/sm4_win.c.obj
 libsm4_optimized.a: CMakeFiles/sm4_optimized.dir/build.make
 libsm4_optimized.a: CMakeFiles/sm4_optimized.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\Learn_file\Required_Courses\3.3\Project1_sm4_optimization\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C static library libsm4_optimized.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\Learn_file\Required_Courses\project\Project1_sm4_optimization\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C static library libsm4_optimized.a"
 	$(CMAKE_COMMAND) -P CMakeFiles\sm4_optimized.dir\cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\sm4_optimized.dir\link.txt --verbose=$(VERBOSE)
 
@@ -160,6 +160,6 @@ CMakeFiles/sm4_optimized.dir/clean:
 .PHONY : CMakeFiles/sm4_optimized.dir/clean
 
 CMakeFiles/sm4_optimized.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\Learn_file\Required_Courses\3.3\Project1_sm4_optimization D:\Learn_file\Required_Courses\3.3\Project1_sm4_optimization D:\Learn_file\Required_Courses\3.3\Project1_sm4_optimization\build D:\Learn_file\Required_Courses\3.3\Project1_sm4_optimization\build D:\Learn_file\Required_Courses\3.3\Project1_sm4_optimization\build\CMakeFiles\sm4_optimized.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\Learn_file\Required_Courses\project\Project1_sm4_optimization D:\Learn_file\Required_Courses\project\Project1_sm4_optimization D:\Learn_file\Required_Courses\project\Project1_sm4_optimization\build D:\Learn_file\Required_Courses\project\Project1_sm4_optimization\build D:\Learn_file\Required_Courses\project\Project1_sm4_optimization\build\CMakeFiles\sm4_optimized.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/sm4_optimized.dir/depend
 
