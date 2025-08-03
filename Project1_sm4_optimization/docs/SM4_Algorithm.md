@@ -1,31 +1,61 @@
-# SM4算法数学原理
+# SM4分组密码算法
 
 ## 1. 算法概述
-- 中国商用密码标准 (GB/T 32907-2016)
-- 128位分组长度/密钥长度
-- 32轮Feistel结构
+- **发布时间**：2006年（最初用于WAPI无线安全协议）
+- **国家标准**：GMT 002-2012, GBT 32907-2016
+- **结构类型**：不平衡Feistel网络
+- **分组长度**：128位
+- **密钥长度**：128位
+- **轮数**：32轮
 
-## 2. 轮函数
-$$F(X_0, X_1, X_2, X_3, rk) = X_0 \oplus T(X_1 \oplus X_2 \oplus X_3 \oplus rk)$$
+## 2. 轮函数数学表示
+### 加密过程
+设输入分组为 $(X_0, X_1, X_2, X_3) \in (\mathbb{F}_2^{32})^4$，轮密钥 $rk_i \in \mathbb{F}_2^{32}$
+对于 $i = 0$ 到 $31$：
+$$X_{i+4} = F(X_i, X_{i+1}, X_{i+2}, X_{i+3}, rk_i) = X_i \oplus T(X_{i+1} \oplus X_{i+2} \oplus X_{i+3} \oplus rk_i)$$
+最终密文：$(X_{35}, X_{34}, X_{33}, X_{32})$
 
-其中：
-- $T(\cdot) = L(\tau(\cdot))$
-- $\tau$ 为S盒变换（8位输入，8位输出）
-- $L$ 为线性变换：
+### 核心变换 $T(\cdot)$
+$$T(\cdot) = L(\tau(\cdot))$$
+
+- **非线性变换 $\tau$**：
+  $$\tau(A) = (Sbox(a_0), Sbox(a_1), Sbox(a_2), Sbox(a_3)), \quad A \in \mathbb{F}_2^{32}$$
+  
+- **线性变换 $L$**：
   $$L(B) = B \oplus (B \lll 2) \oplus (B \lll 10) \oplus (B \lll 18) \oplus (B \lll 24)$$
 
-## 3. S盒构造
-基于复合域$GF(2^8)/GF(2^4)/GF(2^2)$实现：
-```python
-def sbox(x):
-    # 仿射变换
-    x = affine_transform(x)
-    # 在GF(2^8)上求逆
-    if x != 0:
-        x = gf256_inv(x)
-    return x
-```
-## 4. 密钥扩展
+## 3. S盒代数结构
+### 数学表达式
+$$Sbox_{SM4}(x) = \left[ (x \cdot A)^{-1} \cdot A \right] \oplus \left[ x \cdot L \right]$$
 
-$$rk_i = k_{i+4} = k_i \oplus T'(k_{i+1} \oplus k_{i+2} \oplus k_{i+3} \oplus CK_i)$$
-其中$T'$变换与加密中的$T$类似但线性部分不同。
+- **有限域**：$GF(2^8)$，不可约多项式 $g(x) = x^8 + x^7 + x^6 + x^5 + x^4 + x^2 + 1$
+- **仿射变换矩阵**：
+  $$
+  A = \begin{pmatrix} 
+  1 & 1 & 0 & 1 & 0 & 0 & 1 & 1 \\
+  1 & 1 & 1 & 0 & 1 & 0 & 0 & 1 \\
+  1 & 1 & 1 & 1 & 0 & 1 & 0 & 0 \\
+  0 & 1 & 1 & 1 & 1 & 0 & 1 & 0 \\
+  0 & 0 & 1 & 1 & 1 & 1 & 0 & 1 \\
+  1 & 0 & 0 & 1 & 1 & 1 & 1 & 0 \\
+  0 & 1 & 0 & 0 & 1 & 1 & 1 & 1 \\
+  1 & 0 & 1 & 0 & 0 & 1 & 1 & 1 
+  \end{pmatrix}, \quad L = \mathtt{0x6B}
+  $$
+
+## 4. 密钥扩展算法
+主密钥 $MK = (MK_0, MK_1, MK_2, MK_3)$：
+$$K_i = MK_i \oplus FK_i$$
+其中系统参数 $FK = (\mathtt{0xA3B1BAC6}, \mathtt{0x56AA3350}, \mathtt{0x677D9197}, \mathtt{0xB27022DC})$
+
+轮密钥生成：
+$$rk_i = K_{i+4} = K_i \oplus T'(K_{i+1} \oplus K_{i+2} \oplus K_{i+3} \oplus CK_i)$$
+其中 $T'$ 使用修改的线性层：
+$$L'(B) = B \oplus (B \lll 13) \oplus (B \lll 22)$$
+$CK_i$ 为固定参数，通过 $(4i+j) \times 7 \mod 256$ 计算
+## 5. 安全分析
+
+### 差分/线性分析
+
+- **最佳差分概率**：$2^{-6}$（优于AES的$2^{-6}$）
+- **全轮安全余量**：$32 \times 2^{-6} = 2^{-192} < 2^{-128}$
