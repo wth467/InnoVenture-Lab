@@ -17,25 +17,30 @@ __m128i _mm_aesenclast_si128(__m128i state, __m128i rkey);
 ### SM4的AES-NI加速
 
 #### 域同构映射
+$$(GF_{SM4}(2^8))$$
+将计算从
+$$(GF_{SM4}(2^8))$$
+映射到
+$$(GF_{AES}(2^8))$$ :
 
-将计算从\(GF_{SM4}(2^8)\)映射到\(GF_{AES}(2^8)\)：
-\[
-GF_{SM4}(2^8) \cong GF_{AES}(2^8)
-\]
+$$GF_{SM4}(2^8) \cong GF_{AES}(2^8)$$
+
 **映射矩阵**\(M\)满足：
-\[
-\mathbf{x}_{AES} = M \cdot \mathbf{x}_{SM4}
-\]
 
+$$x_{AES} = M \cdot x_{SM4}$$
 ## 3. T-Table优化技术
 
 ### SM4 T-Table构造
 
-将\(T(\cdot) = L \circ \tau\)替换为4个预计算表：
-\[
-T_i[x] = L_i(Sbox(x)), \quad i \in \{0,1,2,3\}
-\]
-其中\(L_i\)是应用于SBox输出的线性变换部分。  
+将
+$$T(\cdot) = L \circ \tau$$
+替换为4个预计算表：
+
+$$T_i[x] = L_i(Sbox(x)), \quad i \in 0,1,2,3$$
+
+其中
+$$L_i$$
+是应用于SBox输出的线性变换部分。  
 **表大小**：4 × 256 × 32位 = 4 KB
 
 ### SIMD并行处理
