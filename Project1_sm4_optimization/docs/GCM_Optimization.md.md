@@ -29,15 +29,15 @@ $$
 ## 2. GHASH优化技术
 
 ### 2.1 GHASH算法
-\[
+$$
 \text{GHASH}(H, A, C) = \left( \sum_{i=1}^m X_i \cdot H^{m+1-i} \right) \oplus E_k(J_0)
-\]
+$$
 ### 2.2 AES-NI辅助GHASH
 
 通过域同构复用AES-NI指令：
-\[
-\text{GHASH}_{SM4} = \phi^{-1} \left( \text{GHASH}_{AES} \left( \phi(H), \phi(A), \phi(C) \right) \right)
-\]
+$$
+\text{GHASH}_{SM4} = \phi^{-1} ( \text{GHASH}_{AES} ( \phi(H), \phi(A), \phi(C) ) )
+$$
 ### 2.3 Karatsuba算法优化
 使用Karatsuba算法加速GF(2¹²⁸)乘法：
 $$a \times b = (a_H \cdot b_H) \cdot x^{128} + [(a_H + a_L)(b_H + b_L) + a_H b_H + a_L b_L] \cdot x^{64} + a_L b_L$$
