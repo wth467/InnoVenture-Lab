@@ -1,2 +1,5 @@
 .vscode
 __pycache__/
+Project2_/test_results
+watermarks/
+test_images/

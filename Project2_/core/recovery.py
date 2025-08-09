@@ -38,15 +38,26 @@ def enhance_watermark(wm_extracted, kernel_size=3):
     :param kernel_size: 形态学操作核大小
     :return: 增强后的水印
     """
-    # 中值滤波去除噪声
+    # 1. 中值滤波去除噪声
     filtered = cv2.medianBlur(wm_extracted, kernel_size)
     
-    # 二值化
-    _, binary = cv2.threshold(filtered, 128, 255, cv2.THRESH_BINARY)
+    # 2. 自适应阈值处理
+    binary = cv2.adaptiveThreshold(
+        filtered, 255, 
+        cv2.ADAPTIVE_THRESH_GAUSSIAN_C, 
+        cv2.THRESH_BINARY, 11, 2
+    )
     
-    # 形态学操作增强
+    # 3. 形态学操作增强
     kernel = np.ones((kernel_size, kernel_size), np.uint8)
     opened = cv2.morphologyEx(binary, cv2.MORPH_OPEN, kernel)
     closed = cv2.morphologyEx(opened, cv2.MORPH_CLOSE, kernel)
     
-    return closed
+    # 4. 轮廓筛选 - 移除小噪点
+    contours, _ = cv2.findContours(closed, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    mask = np.zeros_like(closed)
+    for cnt in contours:
+        if cv2.contourArea(cnt) > 10:  # 只保留面积大于10的轮廓
+            cv2.drawContours(mask, [cnt], -1, 255, -1)
+    
+    return mask

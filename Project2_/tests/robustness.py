@@ -1,44 +1,36 @@
 import cv2
 import numpy as np
+import os
 import json
 from pathlib import Path
 from tqdm import tqdm
-
 from core.recovery import enhance_watermark
 from core.dct_watermark import DCTWatermark
 from core.attacks import ImageAttacks
 from .metrics import similarity_report
 from utils.pool import parallel_process
 
-def test_robustness(orig_img, orig_wm, attack_types, output_dir="results"):
-    """
-    水印鲁棒性测试
-    :param orig_img: 原始图像
-    :param orig_wm: 原始水印
-    :param attack_types: 攻击类型列表
-    :param output_dir: 结果输出目录
-    """
+def test_robustness(orig_img, orig_wm, attack_types, output_dir="results", success_threshold=0.7):
+    # 确保输出目录存在
+    os.makedirs(output_dir, exist_ok=True)
+    
     # 初始化水印系统
-    watermarker = DCTWatermark(password=1234)
+    watermarker = DCTWatermark(password=1234, alpha=0.1)
     
     # 嵌入水印
     watermarked = watermarker.embed(orig_img, orig_wm)
-    cv2.imwrite(f"{output_dir}/watermarked.jpg", watermarked)
     
     # 测试每种攻击
     results = []
-    for attack in tqdm(attack_types, desc="Testing attacks"):
+    for attack in attack_types:
         # 应用攻击
         if attack == "original":
             attacked_img = watermarked
             attack_name = "原始图像"
         else:
-            attacked_img = getattr(ImageAttacks, attack)(watermarked)
+            attack_func = getattr(ImageAttacks, attack)
+            attacked_img = attack_func(watermarked)
             attack_name = attack.replace('_', ' ').title()
-        
-        # 保存攻击后图像
-        attack_img_path = f"{output_dir}/{attack}.jpg"
-        cv2.imwrite(attack_img_path, attacked_img)
         
         # 提取水印
         extracted_wm = watermarker.extract(
@@ -50,43 +42,57 @@ def test_robustness(orig_img, orig_wm, attack_types, output_dir="results"):
         # 增强水印
         enhanced_wm = enhance_watermark(extracted_wm)
         
-        # 保存提取的水印
-        wm_path = f"{output_dir}/{attack}_wm.png"
-        cv2.imwrite(wm_path, enhanced_wm)
-        
         # 计算相似度
         report = similarity_report(orig_wm, enhanced_wm)
+        nc = report["NC"]
+        
+        # 判断是否成功
+        success = nc > success_threshold
+        status = "✗ 失败" if success else "✓ 成功"
         
         results.append({
-            "attack": attack_name,
-            "image": Path(attack_img_path).name,
-            "watermark": Path(wm_path).name,
-            **report
+            "攻击类型": attack_name,
+            "状态": status
         })
-    
-    # 保存结果
-    with open(f"{output_dir}/results.json", "w") as f:
-        json.dump(results, f, indent=2)
     
     return results
 
-def batch_test(image_paths, wm_path, output_dir="batch_results"):
+def print_test_results(results):
     """
-    批量测试多张图像
+    打印格式化的测试结果
     """
-    orig_wm = cv2.imread(wm_path, cv2.IMREAD_GRAYSCALE)
+    print("\n" + "=" * 50)
+    print("数字水印鲁棒性测试报告")
+    print("=" * 50)
+    print(f"{'攻击类型':<20} | {'状态':<10}")
+    print("-" * 50)
     
-    tasks = []
-    for img_path in image_paths:
-        orig_img = cv2.imread(img_path)
-        tasks.append((orig_img, orig_wm))
+    for res in results:
+        print(f"{res['攻击类型']:<20} | {res['状态']}")
     
-    # 并行处理
-    attack_types = ["original", "shift", "crop", "adjust_contrast", "rotate", "add_noise"]
-    results = parallel_process(
-        tasks, 
-        lambda args: test_robustness(*args, attack_types, output_dir),
-        n_jobs=4
-    )
+    # 计算成功率
+    success_count = sum(1 for res in results if "成功" in res["状态"])
+    success_rate = success_count / len(results) * 100
+    print("-" * 50)
+    print(f"测试完成 | 成功率: {success_rate:.1f}% ({success_count}/{len(results)})")
+    print("=" * 50 + "\n")
+
+def simple_robustness_test(img_path, wm_path, attacks=None):
+    
+    # 加载图像和水印
+    img = cv2.imread(img_path)
+    wm = cv2.imread(wm_path, cv2.IMREAD_GRAYSCALE)
+    
+    if img is None or wm is None:
+        print("错误：无法加载图像或水印文件")
+        return
+    
+    print(f"开始测试: 图像={os.path.basename(img_path)}, 水印={os.path.basename(wm_path)}")
+    
+    # 运行测试
+    results = test_robustness(img, wm, attacks)
+    
+    # 打印结果
+    print_test_results(results)
     
     return results
