@@ -3,3 +3,8 @@ __pycache__/
 Project2/test_results
 watermarks/
 test_images/
+node_modules/
+build/
+*.wtns
+*.zkey
+*.ptau
