@@ -1,38 +1,44 @@
 # InnoVenture-Lab
 本仓库含2025 暑期创新创业实践课程作业，涵盖算法原型、技术实现等内容。
-## SM4优化实现
 
-### 项目概述
-本项目提供了SM4加密算法的多种优化实现，包括：
-- 基础C语言实现
-- T-table优化
-- AES-NI指令集优化
-- AVX-512 + GFNI高级优化
-- SM4-GCM认证加密模式
+## 项目概览
 
-### 构建说明
+| 项目 | 核心内容 | 关键技术 |
+|------|----------|----------|
+| **SM4优化** | 算法加速与GCM模式 | T-table/AESNI/GFNI |
+| **图片水印** | 泄露检测与鲁棒性 | DCT变换/OpenCV |
+| **Poseidon2电路** | ZKP哈希算法实现 | Circom/Groth16 |
+| **SM3优化** | 性能提升与安全验证 | AVX2/长度扩展攻击 |
+| **SM2实现** | 签名算法与漏洞验证 | 相同随机数攻击 |
+| **密码检查** | 隐私保护协议 | K-匿名/PSI |
 
-#### 依赖
-- CMake 3.15+
-- GCC 10+ 或 Clang 12+（支持AVX-512和GFNI）
+## 项目简介
 
-### 构建步骤
-```bash
-# 克隆仓库
-git clone https://github.com/your_username/SM4_Optimized.git
-cd .\Project1_sm4_optimization\
+### 1. SM4优化实现
+- 基础实现 → T-table优化 → AESNI加速 → GFNI指令集
+- SM4-GCM认证加密优化
+- **性能提升**：0.8 → 8.7 Gbps
 
-# 创建构建目录
-mkdir build
-cd build
+### 2. 图片水印系统
+- DCT频域水印嵌入/提取
+- 抗攻击测试：旋转/裁剪/调色/噪声
 
-# 配置和构建
-cmake -G "MinGW Makefiles" -DENABLE_AESNI=ON ..
-make
+### 3. Poseidon2电路
+- Groth16证明生成
+- 电路结构：S-box → MDS矩阵 → 轮常数
 
-# 运行测试
-.\test_sm4.exe 
+### 4. SM3优化与验证
+- 消息调度并行化/循环展开
+- 长度扩展攻击验证
+- Merkle树（10万节点）存在性证明
 
-# 性能测试
-.\benchmark.exe 
-```
+### 5. SM2实现与漏洞
+- Python基础实现
+- 签名算法误用验证
+- 中本聪签名伪造POC
+
+### 6. 密码检查协议
+- Google Password Checkup实现
+- 客户端模糊哈希（HMAC-SHA256）
+- 服务器隐私集合检索
+
